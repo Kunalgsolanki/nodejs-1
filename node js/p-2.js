@@ -2,12 +2,12 @@ const fs = require('fs');
 
 const input = process.argv;
 
-if (input[2] == 'add') {
-    fs.writeFileSync(input[3], input[4]);
+if (input[3] == 'add') {
+    fs.writeFileSync(input[4], input[5]);
 }
-else if (input[2] == 'remove') {
+else if (input[3] == 'remove') {
  
-    fs.unlinkSync(input[3]);
+    fs.unlinkSync(input[4]);
 
      
 
