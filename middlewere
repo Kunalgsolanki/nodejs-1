@@ -1,0 +1,32 @@
+const express = require('express');
+const app = express();
+
+const reqfiller= (req, res, next)=>{
+
+   if(!req.query.age){
+       
+         res.send("plase provide the age ");
+       
+   } 
+    else if(req.query.age<18  ) {
+        res.send("you can not acess this web site");
+    }
+       
+   else{
+           next();
+   }
+
+}
+app.use(reqfiller);
+app.get('/',(req, resp)=>{
+    resp.send(" <h1> hello word </h1>");
+})
+app.get('/users',(req, resp)=>{
+    resp.send(" welcome to UserPages");
+});
+app.get('/service',(req, resp)=>{
+    resp.send(" welcome to service");
+})
+
+console.log("kunal");
+
